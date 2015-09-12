@@ -1,0 +1,19 @@
+#+TITLE: formula-isAnyError
+
+#+BEGIN_SRC sh :exports none
+  babel OR.js -m umd --out-file index.js
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC js :tangle isAnyError.js
+  export default function isAnyError() {
+    var n = arguments.length;
+    while (n--) {
+      if (arguments[n] instanceof Error) {
+        return true;
+      }
+    }
+    return false;
+  };
+#+END_SRC
